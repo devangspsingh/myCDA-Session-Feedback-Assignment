@@ -12,11 +12,24 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = "dev-insecure-key-do-not-use-in-production"
+# Load .env file if present
+env_file = BASE_DIR / ".env"
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, val = line.split("=", 1)
+                os.environ.setdefault(key.strip(), val.strip().strip("'\""))
 
-DEBUG = True
+SECRET_KEY = os.environ.get(
+    "SECRET_KEY", "dev-insecure-key-do-not-use-in-production"
+)
 
-ALLOWED_HOSTS = ["*"]
+DEBUG = os.environ.get("DEBUG", "True").lower() in ("true", "1", "yes")
+
+allowed_hosts_env = os.environ.get("ALLOWED_HOSTS", "*")
+ALLOWED_HOSTS = [h.strip() for h in allowed_hosts_env.split(",") if h.strip()]
 
 INSTALLED_APPS = [
     "django.contrib.admin",

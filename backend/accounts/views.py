@@ -22,10 +22,14 @@ class LoginView(APIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data["user"]
         token, _ = Token.objects.get_or_create(user=user)
+        user_data = UserSerializer(user).data
+        if user.role == "parent":
+            links = FamilyLink.objects.filter(parent=user).select_related("student")
+            user_data["family_links"] = FamilyLinkSerializer(links, many=True).data
         return Response(
             {
                 "token": token.key,
-                "user": UserSerializer(user).data,
+                "user": user_data,
             },
             status=status.HTTP_200_OK,
         )

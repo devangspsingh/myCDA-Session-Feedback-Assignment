@@ -1,5 +1,22 @@
 # myCDA -- Session Feedback Assignment
 
+## 🌐 Live Deployment
+
+The application is deployed live and ready to test:
+
+- **Frontend App**: [https://my-cda.pages.dev/login](https://my-cda.pages.dev/login)
+- **Backend API Base**: [https://api.cda.gyanaangan.in/api/v1/](https://api.cda.gyanaangan.in/api/v1/)
+
+> **Quick Test Credentials** (Password for all: `testpass123`):
+> - **Student**: `student.emma` (Submit feedback on completed sessions & view history)
+> - **Parent**: `parent.james` (Switch between children Emma & Liam, submit feedback)
+> - **Instructor**: `instructor.sarah` (View duration-weighted rolling score summary)
+> - **Admin**: `admin.rachel` (Full access & instructor scorecard switcher)
+>
+> Full account details and relations are documented in [TEST_ACCOUNTS.md](TEST_ACCOUNTS.md).
+
+---
+
 ## What is this?
 
 A starter repo for the myCDA platform. Your task is to build the **Session Feedback** feature. Read `ASSIGNMENT_SPEC.md` for full requirements and `TEST_ACCOUNTS.md` for test credentials.
@@ -106,3 +123,9 @@ frontend/
 2. A `DESIGN_DECISIONS.md` file in the repo root explaining your choices
 3. Make sure `python manage.py test` passes
 4. Make sure both backend and frontend start without errors
+
+## Candidate Information
+
+- **Author**: Devang Shaurya Pratap Singh
+- **Email**: [devangshauryapratapsingh@gmail.com](mailto:devangshauryapratapsingh@gmail.com)
+- **LinkedIn**: [https://www.linkedin.com/in/devangspsingh](https://www.linkedin.com/in/devangspsingh)

@@ -45,7 +45,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       { username, password }
     );
     localStorage.setItem("cda_token", res.token);
-    setUser(res.user);
+    try {
+      const profile = await api.get<User>("/accounts/profile/");
+      setUser(profile);
+    } catch {
+      setUser(res.user);
+    }
   };
 
   const logout = () => {

@@ -1,0 +1,72 @@
+# ==========================================
+# Python Core & Byte-code
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ==========================================
+# Virtual Environments (DO NOT COMMIT)
+# ==========================================
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# ==========================================
+# Django Specific
+# ==========================================
+# Ignore local development databases (like SQLite)
+*.sqlite3
+
+# Ignore user-uploaded media files
+media/
+
+# Ignore gathered static assets (generated via collectstatic)
+static/
+staticfiles/
+
+# Keep this if you use custom local settings files
+local_settings.py
+
+# ==========================================
+# Environments and Secrets
+# ==========================================
+.env
+.env.[a-zA-Z]*
+!.env.example
+*.env
+
+# ==========================================
+# Testing, Coverage, and Linting
+# ==========================================
+.coverage
+htmlcov/
+.tox/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==========================================
+# IDEs and Text Editors
+# ==========================================
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+.DS_Store
+Thumbs.db
+
+.venv
+.DS_Store
